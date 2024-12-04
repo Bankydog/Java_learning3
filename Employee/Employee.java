@@ -3,7 +3,21 @@ package Employee;
 public class Employee<T, U> {
     private T value;
     private String name;
-    private U balace;
+    private U balance;
+
+    public Employee() {
+
+    }
+
+    public Employee(T value, String name) {
+
+    }
+
+    public Employee(T value, String name, U balance) {
+        this.value = value;
+        this.name = name;
+        this.balance = balance;
+    }
 
     public void setValue(T value) {
         this.value = value;
@@ -13,8 +27,8 @@ public class Employee<T, U> {
         this.name = name;
     }
 
-    public void setSalary(U balace) {
-        this.balace = balace;
+    public void setSalary(U balance) {
+        this.balance = balance;
     }
 
     public T getValue() {
@@ -26,7 +40,7 @@ public class Employee<T, U> {
     }
 
     public U getSalary() {
-        return balace;
+        return balance;
     }
 
     public void displayEmployee() {
