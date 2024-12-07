@@ -1,24 +1,22 @@
-package Employee;
+package Employee.Employee;
 
-public class Employee<T, U> {
+public abstract class Employee<T, U> {
     private T value;
     private String name;
     private U balance;
 
+    // Constructor
     public Employee() {
-
     }
 
-    public Employee(T value, String name) {
-
-    }
-
-    public Employee(T value, String name, U balance) {
-        this.value = value;
+    // Constructor with name and balance
+    public Employee(String name, U balance) {
         this.name = name;
         this.balance = balance;
+        this.displayEmployee();
     }
 
+    // Setter methods
     public void setValue(T value) {
         this.value = value;
     }
@@ -31,6 +29,7 @@ public class Employee<T, U> {
         this.balance = balance;
     }
 
+    // Getter methods
     public T getValue() {
         return value;
     }
@@ -43,9 +42,13 @@ public class Employee<T, U> {
         return balance;
     }
 
+    // Abstract method for bonus calculation
+    public abstract void bonus();
+
+    // Display employee details
     public void displayEmployee() {
-        System.out.println("id : " + this.getValue());
-        System.out.println("Name : " + this.getName());
-        System.out.println("Salary : " + this.getSalary());
+        System.out.println("ID: " + this.getValue());
+        System.out.println("Name: " + this.getName());
+        System.out.println("Salary: " + this.getSalary());
     }
 }
